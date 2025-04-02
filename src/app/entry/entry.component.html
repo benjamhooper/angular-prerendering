@@ -1,6 +1,7 @@
 <header class="header">
     <div class="container">
       <nav>
+        <div>v{{getEnvironmentVersion()}}</div>
         <div class="logo">Brand</div>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -169,6 +170,7 @@
       </div>
       <div class="copyright">
         <p>&copy; {{currentYear}} Brand. All rights reserved.</p>
+        <p>v{{getEnvironmentVersion()}}</p>
       </div>
     </div>
   </footer>

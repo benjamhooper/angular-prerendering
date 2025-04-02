@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ExternalApiComponent } from "../external-api/external-api.component";
+import packageInfo from '../../../package.json';
 
 @Component({
   selector: 'app-entry',
@@ -14,5 +15,9 @@ export class EntryComponent {
   
   constructor() {
     this.currentYear = new Date().getFullYear();
+  }
+
+  public getEnvironmentVersion(): string {
+    return packageInfo.version;
   }
 }

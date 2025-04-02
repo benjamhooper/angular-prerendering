@@ -1,7 +1,10 @@
 name: Angular Build and Deploy to GitHub Pages
 
 
-on: [push]
+on:
+  push:
+    tags:        
+      - '*' 
 
 permissions:
   contents: read
@@ -27,6 +30,9 @@ jobs:
 
       - name: Run tests
         run: npm run test:ci
+
+      - name: Run versioning
+        run: npm version --no-git-tag-version $GITHUB_REF_NAME
 
       - name: Build
         run: npm run build
