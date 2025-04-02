@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExternalApiComponent } from './external-api.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('ExternalApiComponent', () => {
   let component: ExternalApiComponent;
@@ -8,7 +10,11 @@ describe('ExternalApiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ExternalApiComponent]
+      imports: [ExternalApiComponent],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
     })
     .compileComponents();
 
