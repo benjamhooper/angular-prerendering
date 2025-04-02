@@ -1,6 +1,13 @@
-name: Node.js CI
+name: Angular Build and Deploy to GitHub Pages
+
 
 on: [push]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   angular:
     name: Angular Build
