@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>IP Information</h2>
+    
+    @if (loading) {
+    <div>
+        <p>Loading IP data...</p>
+    </div>
+    }
+    
+    @if (error) {
+    <div class="alert alert-danger">
+        Error
+    </div>
+    }
+    
+    @if (ipInfo && !loading) {
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IP</td>
+                <td>{{ ipInfo.ip }}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{ ipInfo.city }}</td>
+            </tr>
+            <tr>
+                <td>Region</td>
+                <td>{{ ipInfo.region }}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{ ipInfo.country }}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{ ipInfo.city }}</td>
+            </tr>
+            <tr>
+                <td>Organization</td>
+                <td>{{ ipInfo.org }}</td>
+            </tr>
+            <tr>
+                <td>Postal</td>
+                <td>{{ ipInfo.postal }}</td>
+            </tr>
+    </table>
+    }
+</div>
